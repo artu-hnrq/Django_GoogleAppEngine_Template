@@ -16,7 +16,7 @@ env:
 	pip freeze > requirements.txt
 
 s serve:
-	dev_appserver.py --application=$(PROJECT_ID) app.yaml
+	dev_appserver.py --application=$(GAE_PROJECT_ID) app.yaml
 
 deploy: build
 	gcloud config set project $(PROJECT_ID)
