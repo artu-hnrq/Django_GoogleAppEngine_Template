@@ -9,8 +9,13 @@ b build: compile
 	python3 $(DJANGO_ADMIN) makemigrations
 	python3 $(DJANGO_ADMIN) migrate
 
-c compile:
+c compile: clean
+	npm run start --prefix app
 	python3 $(DJANGO_ADMIN) collectstatic --noinput
+
+clean:
+	npm cache clean --force
+	rm -rf app/package-lock.json app/webpack-stats.json app/assets/dist
 
 env:
 	pip freeze > requirements.txt

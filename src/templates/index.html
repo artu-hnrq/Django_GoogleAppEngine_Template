@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load render_bundle from webpack_loader %}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!-- Webpack CSS render -->
+    {% render_bundle 'main' 'css' %}
+</head>
+
+<body>
+    <h1>My App</h1>
+    <div id="react-app"></div>
+
+    <!-- Webpack JS render -->
+    {% render_bundle 'main' 'js' %}
+</body>
+
+</html>
