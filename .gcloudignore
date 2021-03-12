@@ -2,14 +2,22 @@
 # using gcloud. It follows the same syntax as .gitignore, with the addition of
 # "#!include" directives (which insert the entries of the given .gitignore-style
 # file at that point).
-#
-# For more information, run:
-#   $ gcloud topic gcloudignore
-#
 
-.gcloudignore
+## Repo
+LICENSE
+README.md
+
+## Development
+.idea/
 .git
 .gitignore
-.idea/
+Makefile
 venv/
+
+## Build
 __pycache__/
+
+## Deployment
+.gcloudignore
+.github
+
