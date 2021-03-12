@@ -14,9 +14,9 @@ from django.core.management.utils import get_random_secret_key
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent.parent
-PROJECT_ROOT = BASE_DIR / 'src'
-
+SETTINGS_ROOT = Path(__file__).resolve().parent
+PROJECT_ROOT = SETTINGS_ROOT.parent
+REPO_ROOT = PROJECT_ROOT.parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -78,7 +78,7 @@ WSGI_APPLICATION = '__project__.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': PROJECT_ROOT / 'db.sqlite3',
+        'NAME': REPO_ROOT / 'db.sqlite3',
     }
 }
 
@@ -115,5 +115,5 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_ROOT = BASE_DIR / 'static'
+STATIC_ROOT = REPO_ROOT / 'static'
 STATIC_URL = '/static/'
