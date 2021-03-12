@@ -29,6 +29,7 @@ jobs:
           with:
             python-version: 3.7
 
+      # Install project requirements
       -   name: Install requirements
           run: |
             python -m pip install --upgrade pip
