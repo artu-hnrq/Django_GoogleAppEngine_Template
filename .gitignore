@@ -1,5 +1,10 @@
+# This file specifies untracked files to be ignored by git
+
+## Development
 .idea/
 venv/
+
+## Build
 __pycache__/
 /static/
 **/db.sqlite3
